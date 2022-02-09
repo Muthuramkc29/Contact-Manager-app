@@ -10,7 +10,11 @@ function Contact({ contacts, removeContactHandler }) {
           <div className="my-3 d-flex justify-content-between align-items-center border border-dark p-2">
             <div className="d-flex justify-content-between align-items-start gap-3">
               <div>
-                <img src={userIcon} style={{ width: 43, height: 43 }} />
+                <img
+                  src={userIcon}
+                  alt="User-Icon"
+                  style={{ width: 43, height: 43 }}
+                />
               </div>
               <div>
                 <h5 style={{ fontSize: 18, padding: 0, margin: 0 }}>
@@ -25,6 +29,7 @@ function Contact({ contacts, removeContactHandler }) {
               <img
                 className="img-fluid me-3"
                 src={trashIcon}
+                alt="Trash-Icon"
                 style={{ width: 25, height: 25 }}
                 role="button"
                 onClick={() => {
