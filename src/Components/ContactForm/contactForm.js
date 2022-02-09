@@ -7,6 +7,10 @@ function ContactForm({ addContactHandler }) {
 
   const handleAdd = (e) => {
     e.preventDefault();
+    if (name === "" || email === "") {
+      alert("All the fields are mandatory!");
+      return;
+    }
     addContactHandler({ id: uuidv4(), name: name, email: email });
     setEmail("");
     setName("");
