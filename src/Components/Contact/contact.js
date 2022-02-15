@@ -52,7 +52,7 @@ function Contact({ contacts, removeContactHandler }) {
         ))
       ) : (
         <div>
-          <p className="text-center">Currently, No contacts Available!</p>
+          <p className="text-center mt-5">Currently, No contacts Available!</p>
         </div>
       )}
     </div>
