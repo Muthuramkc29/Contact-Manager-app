@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import ContactDetail from "./Components/ContactDetail/contactDetail";
 import ContactForm from "./Components/ContactForm/contactForm";
 import ContactList from "./Components/ContactList/contactList";
 import Header from "./Components/Header/header";
@@ -22,11 +24,36 @@ function App() {
   }, [contacts]);
 
   console.log(contacts);
+
   return (
     <div>
-      <Header />
-      <ContactForm addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} setContacts={setContacts} />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem", textAlign: "center" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
+          <Route
+            path="/add"
+            element={<ContactForm addContactHandler={addContactHandler} />}
+          />
+          <Route
+            path="/"
+            element={
+              <ContactList contacts={contacts} setContacts={setContacts} />
+            }
+          />
+          <Route
+            path=":contactId"
+            element={<ContactDetail contacts={contacts} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
