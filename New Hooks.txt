@@ -1,0 +1,15 @@
+useNavigate():
+
+ * useNavigate is used to Programmatically Navigate to a Particular Route - used in Add contact, Edit Contact
+
+ * const navigate = useNavigate();
+   navigate("/")
+
+
+useLocation():
+
+ * useLocation is used to pass props(as state) through  ---  <Link to"/edit", state ={{contact: contact}}>Edit Contact Icon</Link>
+
+ * And used as
+ * const location = useLocation()
+   const {id, name, email} = location.state.contact --- To destructure the props sent by useLocation() Hook.....

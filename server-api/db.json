@@ -1,0 +1,41 @@
+{
+  "contacts": [
+    {
+      "id": "0ee1cb8c-90f7-4923-8768-558c68e36988",
+      "name": "Muthuramkc",
+      "email": "muthuramkc@gmail.com"
+    },
+    {
+      "id": "9b4822f9-9731-4cc1-a389-410196702789",
+      "name": "Muthuramkc2000",
+      "email": "muthuramkc2000@gmail.com"
+    },
+    {
+      "id": "db61a527-06d0-45f6-af91-6d162e729c87",
+      "name": "Max",
+      "email": "max@gmail.com"
+    },
+    {
+      "id": "98cf2cc1-74e1-4927-9447-27ee9e4b27c5",
+      "name": "Last One",
+      "email": "lastOne@gmail.com"
+    }
+  ],
+  "recyclebin": [
+    {
+      "id": "f2c70a9b-dca2-4a73-8395-1ebd483249b6",
+      "name": "Muthuram",
+      "email": "muthuramkc@gmail.com"
+    },
+    {
+      "id": "5f31e030-b023-4a6f-83c3-8340bc0d9583",
+      "name": "Test12345",
+      "email": "test12345@gmail.com"
+    },
+    {
+      "id": "cf219cc3-a841-46f0-8566-d4e998ab1aa8",
+      "name": "Test123",
+      "email": "test123@gmail.com"
+    }
+  ]
+}

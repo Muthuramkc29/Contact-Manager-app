@@ -1,0 +1,15 @@
+API HANDLING:(using Axios)
+METHODS : GET/POST/PUT/DELETE
+
+GET:
+ * GET method requires (response) which is = await axios.get("/contacts")
+ * State is changed setContacts(response.data)
+
+POST:
+ * Requires (request) which is passed to [const response = await axios.post("/contacts", request)
+ * State is changed setContacts([...contacts, response.data])
+
+DELETE:
+ * DOESNT requires request or response....!!! We just get a Status Code!
+ * await axios.delete(`/contacts/${id}`)
+

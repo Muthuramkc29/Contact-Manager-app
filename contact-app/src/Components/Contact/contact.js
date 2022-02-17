@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import trashIcon from "../../images/trash.png";
 import userIcon from "../../images/user-icon.png";
+import trashIcon from "../../images/trash.png";
+import editIcon from "../../images/edit-icon.png";
 
 function Contact({ contacts, removeContactHandler }) {
   return (
@@ -33,17 +34,34 @@ function Contact({ contacts, removeContactHandler }) {
                   </div>
                 </div>
               </Link>
-              <div>
-                <img
-                  className="img-fluid me-3"
-                  src={trashIcon}
-                  alt="Trash-Icon"
-                  style={{ width: 25, height: 25 }}
-                  role="button"
-                  onClick={() => {
-                    removeContactHandler(contact.id);
-                  }}
-                />
+              <div className="d-flex">
+                <Link to="/edit" state={{ contact: contact }}>
+                  <div>
+                    <img
+                      className="img-fluid me-3"
+                      src={editIcon}
+                      alt="edit-Icon"
+                      style={{ width: 25, height: 25 }}
+                      role="button"
+                    />
+                  </div>
+                </Link>
+                <div>
+                  <img
+                    className="img-fluid me-3"
+                    src={trashIcon}
+                    alt="Trash-Icon"
+                    style={{ width: 25, height: 25 }}
+                    role="button"
+                    onClick={() => {
+                      removeContactHandler(
+                        contact.id,
+                        contact.name,
+                        contact.email
+                      );
+                    }}
+                  />
+                </div>
               </div>
             </div>
 
