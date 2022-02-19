@@ -3,8 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 // import styled from "styled-components";
 import "./contact.css";
 import userIcon from "../../images/user-icon.png";
-import trashIcon from "../../images/trash.png";
-import editIcon from "../../images/edit-icon.png";
+// import trashIcon from "../../images/trash.png";
+// import editIcon from "../../images/edit-icon.png";
 
 const Contact = ({ contacts, removeContactHandler }) => {
   return (
