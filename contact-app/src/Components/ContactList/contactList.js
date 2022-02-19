@@ -43,7 +43,10 @@ function ContactList({
       </div>
       {loading ? (
         <div className="d-flex justify-content-center">
-          <i className="pi pi-spin pi-spinner" style={{ fontSize: "2em" }}></i>
+          <i
+            className="pi pi-spin pi-spinner mt-4"
+            style={{ fontSize: "2em" }}
+          ></i>
         </div>
       ) : (
         <Contact
