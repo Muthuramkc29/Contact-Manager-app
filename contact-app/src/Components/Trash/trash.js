@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./trash.css";
 import api from "../../api/contacts";
 import userIcon from "../../images/user-icon.png";
 
@@ -14,8 +15,9 @@ function Trash({ trashContacts, setTrashContacts, restoreHandler }) {
 
   return (
     <div>
+      <h4 className="ms-3 mb-3">Trash Bin</h4>
       <Link to="/">
-        <button className="btn btn-secondary ms-3"> Back </button>
+        <button className="btn btn-sm btn-secondary ms-3"> Back </button>
       </Link>
       {trashContacts.length !== 0 ? (
         trashContacts.map((contact) => (
@@ -35,21 +37,18 @@ function Trash({ trashContacts, setTrashContacts, restoreHandler }) {
                 </div>
 
                 <div>
-                  <h5 style={{ fontSize: 18, padding: 0, margin: 0 }}>
-                    {contact.name}
-                  </h5>
-                  <p style={{ fontSize: 16, padding: 0, margin: 0 }}>
-                    {contact.email}
-                  </p>
+                  <h5>{contact.name}</h5>
+                  <p>{contact.email}</p>
                 </div>
               </div>
 
-              <div className="me-3 d-flex gap-3">
+              <div className="me-3 d-flex align-items-center gap-3">
                 <div
                   role="button"
                   onClick={() => {
                     restoreHandler(contact.id, contact.name, contact.email);
                   }}
+                  style={{ fontSize: 13 }}
                 >
                   RESTORE
                 </div>
@@ -58,6 +57,7 @@ function Trash({ trashContacts, setTrashContacts, restoreHandler }) {
                   onClick={() => {
                     deleteTrashHandler(contact.id);
                   }}
+                  style={{ fontSize: 13 }}
                 >
                   DELETE
                 </div>

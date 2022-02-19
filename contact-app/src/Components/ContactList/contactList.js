@@ -28,13 +28,15 @@ function ContactList({
   return (
     <div className="px-3">
       <div className="py-2 text-start d-flex justify-content-between">
-        <h3>Contact List</h3>
+        <h4>Contact List</h4>
         <div>
           <Link to="/trash">
-            <button className="btn btn-secondary me-3">Recycle bin</button>
+            <button className="btn btn-sm btn-secondary me-1">
+              Recycle bin
+            </button>
           </Link>
           <Link to="/add">
-            <button className="btn btn-primary me-3">Add Contact</button>
+            <button className="btn btn-sm btn-primary me-1">Add Contact</button>
           </Link>
         </div>
       </div>
