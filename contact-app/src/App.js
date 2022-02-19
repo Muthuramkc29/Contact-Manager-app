@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import api from "./api/contacts";
+import api from "./api/axiosConfig";
 import ContactDetail from "./Components/ContactDetail/contactDetail";
 import ContactForm from "./Components/ContactForm/contactForm";
 import ContactList from "./Components/ContactList/contactList";

@@ -1,5 +1,5 @@
 import React from "react";
-import api from "../../api/contacts";
+import api from "../../api/axiosConfig";
 import { Link } from "react-router-dom";
 import Contact from "../Contact/contact";
 
