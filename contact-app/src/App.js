@@ -7,19 +7,24 @@ import ContactList from "./Components/ContactList/contactList";
 import Header from "./Components/Header/header";
 import EditContact from "./Components/EditContact/editContact";
 import Trash from "./Components/Trash/trash";
+import "primereact/resources/themes/lara-light-indigo/theme.css"; //theme
+import "primereact/resources/primereact.min.css"; //core css
+import "primeicons/primeicons.css"; //icons
 
 function App() {
   // const LOCAL_STORAGE_KEY = "contacts";
 
   const [contacts, setContacts] = useState([]);
   const [trashContacts, setTrashContacts] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     // setContacts(retriveContacts);
     const retriveContacts = async () => {
+      setLoading(true);
       const response = await api.get("/contacts");
+      setLoading(false);
       console.log(response);
       setContacts(response.data);
     };
@@ -103,6 +108,7 @@ function App() {
                 setContacts={setContacts}
                 trashContacts={trashContacts}
                 setTrashContacts={setTrashContacts}
+                loading={loading}
               />
             }
           />
@@ -123,6 +129,7 @@ function App() {
                 trashContacts={trashContacts}
                 setTrashContacts={setTrashContacts}
                 restoreHandler={restoreHandler}
+                loading={loading}
               />
             }
           />

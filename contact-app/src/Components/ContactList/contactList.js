@@ -8,6 +8,7 @@ function ContactList({
   setContacts,
   trashContacts,
   setTrashContacts,
+  loading,
 }) {
   const removeContactHandler = async (id, name, email) => {
     await api.delete(`/contacts/${id}`);
@@ -40,10 +41,20 @@ function ContactList({
           </Link>
         </div>
       </div>
-      <Contact
+      {loading ? (
+        <div className="d-flex justify-content-center">
+          <i className="pi pi-spin pi-spinner" style={{ fontSize: "2em" }}></i>
+        </div>
+      ) : (
+        <Contact
+          contacts={contacts}
+          removeContactHandler={removeContactHandler}
+        />
+      )}
+      {/* <Contact
         contacts={contacts}
         removeContactHandler={removeContactHandler}
-      />
+      /> */}
     </div>
   );
 }

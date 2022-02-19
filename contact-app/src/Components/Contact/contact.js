@@ -31,9 +31,9 @@ const Contact = ({ contacts, removeContactHandler }) => {
                   </div>
                 </div>
               </Link>
-              <div className="d-flex">
+              <div className="d-flex align-items-center">
                 <Link to="/edit" state={{ contact: contact }}>
-                  <div>
+                  {/* <div>
                     <img
                       className="img-fluid me-3"
                       src={editIcon}
@@ -41,10 +41,14 @@ const Contact = ({ contacts, removeContactHandler }) => {
                       style={{ width: 25, height: 25 }}
                       role="button"
                     />
-                  </div>
+                  </div> */}
+                  <i
+                    className="pi pi-user-edit me-3"
+                    style={{ fontSize: "1.5em" }}
+                  ></i>
                 </Link>
                 <div>
-                  <img
+                  {/* <img
                     className="img-fluid me-1"
                     src={trashIcon}
                     alt="Trash-Icon"
@@ -57,7 +61,19 @@ const Contact = ({ contacts, removeContactHandler }) => {
                         contact.email
                       );
                     }}
-                  />
+                  /> */}
+                  <i
+                    className="pi pi-trash me-1"
+                    style={{ fontSize: "1.3em" }}
+                    role="button"
+                    onClick={() => {
+                      removeContactHandler(
+                        contact.id,
+                        contact.name,
+                        contact.email
+                      );
+                    }}
+                  ></i>
                 </div>
               </div>
             </div>
